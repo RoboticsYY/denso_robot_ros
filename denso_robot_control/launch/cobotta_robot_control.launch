@@ -6,6 +6,7 @@
   <arg name="robot_name" default="cobotta" />
 
   <!-- Robot description argument -->
+  <arg name="load_description" default="true"/>
   <arg name="robot_description" value="$(arg robot_name)_description" />
 
   <!-- Send format -->
@@ -26,7 +27,9 @@
   </include>
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
-  <param name="robot_description" type="str" textfile="$(find denso_cobotta_descriptions)/$(arg robot_description)/$(arg robot_name).urdf.xacro"/>
+  <group if="$(arg load_description)"> 
+    <param name="robot_description" type="str" textfile="$(find denso_cobotta_descriptions)/$(arg robot_description)/$(arg robot_name).urdf.xacro"/>
+  </group>
 
   <!-- Controller -->
   <include ns="/$(arg robot_name)" file="$(find denso_robot_descriptions)/$(arg robot_description)/$(arg robot_name).launch.xml" />
