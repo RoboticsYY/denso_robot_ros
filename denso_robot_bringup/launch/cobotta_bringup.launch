@@ -45,14 +45,14 @@
   </group>  
 
 
-  <include file="$(find denso_cobotta_moveit_config)/launch/move_group.launch">
+  <!-- <include file="$(find denso_cobotta_moveit_config)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true" />
-    <!-- <arg name="robot_name" value="$(arg robot_name)" /> -->
-  </include>
+    <arg name="robot_name" value="$(arg robot_name)" />
+  </include> -->
 
-  <include file="$(find denso_cobotta_moveit_config)/launch/moveit_rviz.launch">
+  <!-- <include file="$(find denso_cobotta_moveit_config)/launch/moveit_rviz.launch">
     <arg name="config" value="true"/>
-  </include>
+  </include> -->
   
   <!-- <include file="$(find denso_cobotta_moveit_config)/launch/default_warehouse_db.launch" /> -->
 
