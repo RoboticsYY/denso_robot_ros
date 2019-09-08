@@ -201,12 +201,12 @@ namespace denso_robot_control
         "ChangeMode", 1, &DensoRobotHW::Callback_ChangeMode, this);
     m_pubCurMode = nh.advertise<Int32>("CurMode", 1);
     
-    hr = ChangeModeWithClearError(DensoRobotRC8::SLVMODE_SYNC_WAIT
-	| DensoRobotRC8::SLVMODE_POSE_J);
-    if(FAILED(hr)) {
-      ROS_ERROR("Failed to change to slave mode. (%X)", hr);
-      return hr;
-    }
+   // hr = ChangeModeWithClearError(DensoRobotRC8::SLVMODE_SYNC_WAIT
+   //	| DensoRobotRC8::SLVMODE_POSE_J);
+   // if(FAILED(hr)) {
+   //   ROS_ERROR("Failed to change to slave mode. (%X)", hr);
+   //   return hr;
+   // }
 
     return S_OK;
   }

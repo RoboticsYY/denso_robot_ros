@@ -27,8 +27,10 @@
   </include>
 
   <!-- Load the URDF, SRDF and other .yaml configuration files on the param server -->
-  <group if="$(arg load_description)"> 
-    <param name="robot_description" type="str" textfile="$(find denso_cobotta_descriptions)/$(arg robot_description)/$(arg robot_name).urdf.xacro"/>
+  <group if="$(arg load_description)">
+    <arg name="gripper_type" default="parallel"/> 
+    <param name="robot_description" type="str" command="$(find xacro)/xacro --inorder $(find denso_cobotta_descriptions)/cobotta_description/cobotta.urdf.xacro
+	gripper_type:=$(arg gripper_type) "/>
   </group>
 
   <!-- Controller -->
