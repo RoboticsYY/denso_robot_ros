@@ -2,6 +2,7 @@
 
   <include file="$(find denso_cobotta_moveit_config)/launch/move_group.launch">
     <arg name="publish_monitored_planning_scene" value="true" />
+    <arg name="gripper_type" value="none"/>
     <!-- <arg name="robot_name" value="$(arg robot_name)" /> -->
   </include>
 
